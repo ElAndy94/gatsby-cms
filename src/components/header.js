@@ -1,70 +1,37 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#223344`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>Andrew Peliza</h1>
+import headerStyles from "./header.module.scss"
+
+const Header = ({ siteTitle }) => {
+  return (
+    <header className={headerStyles.header}>
+      <h1>
+        <Link to="/" className={headerStyles.title}>
+          {siteTitle}
+        </Link>
+      </h1>
       <nav>
-        <ul>
-          <li>
-            <Link
-              to="/"
-              style={{
-                color: `white`,
-                textDecoration: `none`,
-              }}
-            >
+        <ul className={headerStyles.navList}>
+          <li className={headerStyles.navItem}>
+            <Link to="/" activeClassName={headerStyles.activeNavItem}>
               Home
             </Link>
           </li>
-          <li>
-            <Link
-              to="/"
-              style={{
-                color: `white`,
-                textDecoration: `none`,
-              }}
-            >
+          <li className={headerStyles.navItem}>
+            <Link to="/about" activeClassName={headerStyles.activeNavItem}>
               About
             </Link>
           </li>
-          <li>
-            {" "}
-            <Link
-              to="/"
-              style={{
-                color: `white`,
-                textDecoration: `none`,
-              }}
-            >
+          <li className={headerStyles.navItem}>
+            <Link to="/contact" activeClassName={headerStyles.activeNavItem}>
               Contact
             </Link>
           </li>
         </ul>
       </nav>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+    </header>
+  )
 }
 
 export default Header

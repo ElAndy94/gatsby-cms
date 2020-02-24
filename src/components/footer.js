@@ -1,9 +1,9 @@
 import React from "react"
 
-const Footer = () => {
+const Footer = ({ siteAuthor }) => {
   return (
     <footer>
-      <p>Created by Andrew Peliza, © 2020</p>
+      <p>Created by {siteAuthor}, © 2020</p>
     </footer>
   )
 }
