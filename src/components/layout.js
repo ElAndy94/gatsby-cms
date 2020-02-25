@@ -20,13 +20,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className={layoutStyles.container}>
-      <div className={layoutStyles.content}>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
+    <>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div className={layoutStyles.container}>
+        <div className={layoutStyles.content}>
+          <main>{children}</main>
+        </div>
+        <Footer siteAuthor={data.site.siteMetadata.author} />
       </div>
-      <Footer siteAuthor={data.site.siteMetadata.author} />
-    </div>
+    </>
   )
 }
 

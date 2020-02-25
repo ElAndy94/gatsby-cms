@@ -3,7 +3,16 @@ $navUnderlineColour: #15abc5;
 
 .header {
   background: #223344;
-  padding: 1rem 0 3rem;
+  // margin: 0 auto;
+  // max-width: 960px;
+  // padding: 1rem 0 3rem;
+  // padding: 1rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem 0;
 }
 
 .title {
